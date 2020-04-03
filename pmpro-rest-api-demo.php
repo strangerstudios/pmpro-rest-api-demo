@@ -20,13 +20,13 @@ function init_test() {
 		///$has_access = pmprorad_has_membership_access( 1, 1 );		
 		///var_dump( $has_access );
 		
-		$membership_level = pmprorad_get_membership_level_for_user( 'jason+api@strangerstudios.com' );
-		var_dump( $membership_level );
+		///$membership_level = pmprorad_get_membership_level_for_user( 'jason+api@strangerstudios.com' );
+		///var_dump( $membership_level );
 		
 		exit;
 	}
 }
-add_action( 'init', 'init_test' );
+///add_action( 'init', 'init_test' );
 
 /**
  * Get array of settings needed to make API calls.
@@ -62,9 +62,7 @@ function pmprorad_request( $endpoint, $method = 'get', $params = array() ) {
         )
     );
     $response = wp_remote_request( $url, $args );
-    
-	d( $response );
-	
+    	
 	if ( $response['response']['code'] !== 200 ) {        
         return false;
     } else {
