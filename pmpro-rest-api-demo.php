@@ -89,21 +89,6 @@ function pmprorad_get_remote_user_by_email( $email ) {
 }
 
 /**
- * Check if a user has access to a specific post. 
- * /wp-json/pmpro/v1/has_membership_access
- * 
- * You must pass both a user_id AND post_id param to the endpoint.
- */
-function pmprorad_has_membership_access( $user_id, $post_id ) {
-	
-	$params = array( 'user_id' => $user_id, 'post_id' => $post_id );
-	
-	$has_access = pmprorad_request( $endpoint, 'get', $params );
-		
-	return $has_access;
-}
-
-/**
  * Get a membership level for a user.
  * /wp-json/pmpro/v1/get_membership_level_for_user
  *
@@ -150,7 +135,7 @@ function pmprorad_get_membership_levels_for_user( $user_id ) {
  * You must pass either a user_id OR email param to the endpoint.
  * You must pass a post_id param to the endpoint.
  */
-function pmprorad_get_membership_levels_for_user( $user_id, $post_id ) {
+function pmprorad_has_membership_access( $user_id, $post_id ) {
 	$endpoint = '/wp-json/pmpro/v1/has_membership_access';
 	
 	if ( is_numeric( $user_id ) ) {
