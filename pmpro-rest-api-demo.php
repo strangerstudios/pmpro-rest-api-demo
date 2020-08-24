@@ -14,19 +14,19 @@
 /// TESTING
 function init_test() {
 	if ( !empty( $_REQUEST['test'] ) ) {
-		///$remote_user = pmprorad_get_remote_user_by_email( 'jason+api@strangerstudios.com' );
+		///$remote_user = pmprorad_get_remote_user_by_email( 'email@domain.com' );
 		///var_dump( $remote_user );
 		
 		///$has_access = pmprorad_has_membership_access( 1, 1 );		
 		///var_dump( $has_access );
 		
-		///$membership_level = pmprorad_get_membership_level_for_user( 'jason+api@strangerstudios.com' );
-		///var_dump( $membership_level );
+		///$membership_level = pmprorad_get_membership_level_for_user( 'email@domain.com' );
+		///var_dump( $membership_level );	
 		
 		exit;
 	}
 }
-///add_action( 'init', 'init_test' );
+add_action( 'init', 'init_test' );
 
 /**
  * Get array of settings needed to make API calls.
@@ -37,9 +37,9 @@ function init_test() {
 function pmprorad_get_options() {
     return array(
         'localsite' => site_url(),
-        'remotesite' => 'https://dev.paidmembershipspro.com',
-        'APIUSER' => 'strangerstudios',
-        'APIPASS' => 'gEkU PlKj bnkC 3rdM aPn2 7NT9',        
+        'remotesite' => 'https://remotesite.com',
+        'APIUSER' => 'username',
+        'APIPASS' => 'application password',        
     );
 }
  
